@@ -55,6 +55,7 @@ export default class SellerComission extends Vue {
   border-radius: 8px;
   box-shadow: 3px 3px 3px #ccc;
   margin-bottom: 8px;
+  width: calc(100% - 6px); /* account for shadow in width */
 }
 
 .header {
