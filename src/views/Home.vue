@@ -111,7 +111,6 @@ export default class Home extends Vue {
 .inputs {
   display: flex;
   justify-content: space-around;
-  /* height: 36px; */
   padding-bottom: 8px;
   padding-top: 8px;
 }
@@ -122,5 +121,22 @@ input {
 
 .list-move {
   transition: transform 0.5s;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .home {
+    display: flex;
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  .inputs {
+    flex-direction: column;
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
