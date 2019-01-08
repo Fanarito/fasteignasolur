@@ -1,22 +1,19 @@
 <template>
   <div class="home">
     <div class="charts">
-      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"></SellerBarComparisonChart>
-      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"></SellerBarComparisonChart>
-      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"></SellerBarComparisonChart>
-      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"></SellerBarComparisonChart>
+      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"/>
     </div>
     <div class="details">
       <h1>Nákvæmar-ish tölur</h1>
       <div class="inputs">
-        <span>
-          Söluverð (milljónir):
-          <input type="number" v-model.number="price">
-        </span>
-        <span>
-          Tímar:
-          <input type="number" v-model.number="hours">
-        </span>
+        <Card>
+          <div slot="header">Söluverð (milljónir)</div>
+          <Slider v-model.number="price" :max="200"/>
+        </Card>
+        <Card>
+          <div slot="header">Tímar</div>
+          <Slider v-model.number="hours" :max="100"/>
+        </Card>
       </div>
       <transition-group name="list" tag="div" class="sellers">
         <SellerComission
@@ -34,6 +31,8 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import SellerComission from '@/components/SellerComission.vue';
+import Slider from '@/components/forms/Slider.vue';
+import Card from '@/components/ui/Card.vue';
 import SellerBarComparisonChart from '@/components/SellerBarComparisonChart.vue';
 import Seller from '@/domain/sellers/Seller';
 import RemaxSeller from '@/domain/sellers/RemaxSeller';
@@ -46,6 +45,8 @@ import MiklaborgSeller from '@/domain/sellers/MiklaborgSeller';
   components: {
     SellerComission,
     SellerBarComparisonChart,
+    Slider,
+    Card,
   },
 })
 export default class Home extends Vue {
@@ -110,9 +111,13 @@ export default class Home extends Vue {
 
 .inputs {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-bottom: 8px;
   padding-top: 8px;
+}
+
+.inputs > div {
+  width: calc(50% - 4px); /* 8px padding */
 }
 
 input {
