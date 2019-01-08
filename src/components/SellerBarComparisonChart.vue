@@ -1,5 +1,5 @@
 <template>
-  <canvas></canvas>
+  <canvas height="400"></canvas>
 </template>
 
 

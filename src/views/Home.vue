@@ -2,6 +2,7 @@
   <div class="home">
     <div class="charts">
       <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"/>
+      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"/>
     </div>
     <div class="details">
       <h1>Nákvæmar-ish tölur</h1>
@@ -83,11 +84,10 @@ export default class Home extends Vue {
 }
 
 .charts {
-  grid-area: 'charts';
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
-  grid-template-areas: 'charts details';
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .details {
