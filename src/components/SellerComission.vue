@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :style="{ borderLeft: `4px solid ${seller.color}` }">
     <div class="header" @click="expand">
       <h1>
         <img class="seller-logo" :src="seller.logoUrl">
