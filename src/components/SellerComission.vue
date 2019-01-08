@@ -3,7 +3,12 @@
     <div class="header" @click="expand">
       <h1>
         <img class="seller-logo" :src="seller.logoUrl">
-        <span class="seller-total">{{seller.totalFee().toLocaleString()}} kr.</span>
+        <span class="seller-total">
+          {{seller.totalFee().toLocaleString()}} kr.
+          <span
+            class="property-percentage"
+          >{{propertyPercentage}}%</span>
+        </span>
       </h1>
       <div class="header-icon">
         <div :class="openIconClasses">❱</div>
@@ -32,6 +37,12 @@ export default class SellerComission extends Vue {
   @Prop() private seller!: Seller;
   @Prop() private price!: number;
   @Prop() private hours!: number;
+
+  get propertyPercentage(): string {
+    return ((this.seller.totalFee() / (this.price * 1_000_000)) * 100).toFixed(
+      2,
+    );
+  }
 
   private openIconClasses = {
     'open-icon': true,
@@ -83,6 +94,10 @@ export default class SellerComission extends Vue {
   display: flex;
   justify-content: space-between;
   width: 75%;
+}
+
+.property-percentage {
+  font-size: 12px;
 }
 
 .header-icon {
