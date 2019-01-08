@@ -24,9 +24,9 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class Slider extends Vue {
   @Prop() public value!: number;
-  @Prop() public min: number = 0;
-  @Prop() public max: number = 100;
-  @Prop() public showValue: boolean = false;
+  @Prop({ default: 0 }) public min!: number;
+  @Prop({ default: 100 }) public max!: number;
+  @Prop({ default: false }) public showValue!: boolean;
 }
 </script>
 
