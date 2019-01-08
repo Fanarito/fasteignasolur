@@ -51,6 +51,7 @@ export default class SellerBarComparisonChart extends Vue {
   private mounted() {
     const ctx = this.$el as HTMLCanvasElement;
     this.chart = new Chart(ctx, this.data);
+    this.onSellersChanged();
   }
 
   protected renderChart() {
