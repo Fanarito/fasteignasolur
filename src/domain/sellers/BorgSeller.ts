@@ -7,6 +7,8 @@ import AbstractSeller from './AbstractSeller';
 
 export default class BorgSeller extends AbstractSeller implements Seller {
   public name = 'Borg';
+  public logoUrl = 'img/sellers/borg.png';
+  public color = '#ef7a1d';
 
   public feesTaken(): Fee[] {
     return [

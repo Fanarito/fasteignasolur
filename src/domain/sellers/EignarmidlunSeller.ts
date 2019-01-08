@@ -8,6 +8,8 @@ import HourlyFee from '../fees/HourlyFee';
 export default class EignarmidlunSeller extends AbstractSeller
   implements Seller {
   public name = 'Eignarmiðlun';
+  public logoUrl = 'img/sellers/eignarmidlun.png';
+  public color = '#244c82';
 
   public feesTaken(): Fee[] {
     return [

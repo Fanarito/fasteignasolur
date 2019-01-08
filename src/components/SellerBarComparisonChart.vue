@@ -23,6 +23,7 @@ export default class SellerBarComparisonChart extends Vue {
       datasets: [
         {
           data: [],
+          backgroundColor: [],
         },
       ],
     },
@@ -45,6 +46,7 @@ export default class SellerBarComparisonChart extends Vue {
     this.data.data.datasets[0].data = this.sellers.map(seller =>
       seller.totalFee(),
     );
+    this.data.data.datasets[0].backgroundColor = this.sellers.map(s => s.color);
     this.chart.update();
   }
 

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header" @click="expand">
       <h1>
-        <span class="seller-name">{{seller.name}}</span>
+        <img class="seller-logo" :src="seller.logoUrl">
         <span class="seller-total">{{seller.totalFee().toLocaleString()}} kr.</span>
       </h1>
       <div class="header-icon">
@@ -65,6 +65,10 @@ export default class SellerComission extends Vue {
   padding-right: 16px;
   border-bottom: 1px solid transparent;
   cursor: pointer;
+}
+
+.seller-logo {
+  height: 35px;
 }
 
 .divider {

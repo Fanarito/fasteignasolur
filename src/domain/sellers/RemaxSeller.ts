@@ -7,6 +7,8 @@ import AbstractSeller from './AbstractSeller';
 
 export default class RemaxSeller extends AbstractSeller implements Seller {
   public name = 'Remax';
+  public logoUrl = 'img/sellers/remax.jpg';
+  public color = '#0190de';
 
   public feesTaken(): Fee[] {
     return [
