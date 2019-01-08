@@ -17,6 +17,23 @@ export default class SellerBarComparisonChart extends Vue {
       legend: {
         display: false,
       },
+      scales: {
+        yAxes: [
+          {
+            type: 'linear',
+            ticks: {
+              beginAtZero: true,
+              callback: value => `${value.toLocaleString()} kr.`,
+            },
+          },
+        ],
+      },
+      tooltips: {
+        callbacks: {
+          label: ({ yLabel }) =>
+            yLabel == undefined ? '' : `${yLabel.toLocaleString()} kr.`,
+        },
+      },
     },
     data: {
       labels: [],
