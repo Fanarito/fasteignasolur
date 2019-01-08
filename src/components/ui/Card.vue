@@ -28,7 +28,7 @@ export default class Card extends Vue {}
   width: calc(100% - 6px); /* account for shadow in width */
 }
 
-.card > .card-header {
+.card > .card-header:not(:empty) {
   padding: 8px;
   border-bottom: 1px solid #607d8b;
 }
