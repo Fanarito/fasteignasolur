@@ -1,49 +1,61 @@
 <template>
-  <chart :options="options" :init-options="initOptions" theme="shine"></chart>
+  <canvas></canvas>
 </template>
+
 
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import ECharts from 'vue-echarts/components/ECharts.vue';
-import 'echarts/lib/chart/bar';
-import 'echarts/theme/shine';
 import Seller from '@/domain/sellers/Seller';
+import Chart from 'chart.js';
 
-@Component({
-  components: {
-    chart: ECharts,
-  },
-})
+@Component
 export default class SellerBarComparisonChart extends Vue {
+  private chart: Chart | null = null;
+  private data: Chart.ChartConfiguration = {
+    type: 'bar',
+    options: {
+      legend: {
+        display: false,
+      },
+    },
+    data: {
+      labels: [],
+      datasets: [
+        {
+          data: [],
+        },
+      ],
+    },
+  };
+
   @Prop() private sellers!: Seller[];
   @Prop() private price!: number;
   @Prop() private hours!: number;
 
-  private options: any = {
-    xAxis: { type: 'category' },
-    yAxis: {},
-    dataset: {
-      source: [],
-    },
-    series: [{ type: 'bar' }],
-  };
-
-  private initOptions = {
-    renderer: 'canvas',
-  };
-
   @Watch('sellers')
-  onSellerChange() {
-    this.updateChart();
+  private onSellersChanged() {
+    if (
+      this.chart == null ||
+      this.data.data == undefined ||
+      this.data.data.datasets == undefined
+    ) {
+      return;
+    }
+    this.data.data.labels = this.sellers.map(s => s.name);
+    this.data.data.datasets[0].data = this.sellers.map(seller =>
+      seller.totalFee(),
+    );
+    this.chart.update();
   }
 
-  private updateChart() {
-    const source: any[] = [];
-    this.sellers.forEach(seller => {
-      source.push([seller.name, seller.totalFee()]);
-    });
+  private mounted() {
+    const ctx = this.$el as HTMLCanvasElement;
+    this.chart = new Chart(ctx, this.data);
+  }
 
-    this.options.dataset.source = source;
+  protected renderChart() {
+    if (this.chart == null) return;
+    this.chart.update();
   }
 }
 </script>
