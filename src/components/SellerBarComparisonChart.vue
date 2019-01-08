@@ -36,9 +36,9 @@ export default class SellerBarComparisonChart extends Vue {
   @Watch('sellers')
   private onSellersChanged() {
     if (
-      this.chart == null ||
-      this.data.data == undefined ||
-      this.data.data.datasets == undefined
+      this.chart === null ||
+      this.data.data === undefined ||
+      this.data.data.datasets === undefined
     ) {
       return;
     }
@@ -56,8 +56,10 @@ export default class SellerBarComparisonChart extends Vue {
     this.onSellersChanged();
   }
 
-  protected renderChart() {
-    if (this.chart == null) return;
+  private renderChart() {
+    if (this.chart == null) {
+      return;
+    }
     this.chart.update();
   }
 }

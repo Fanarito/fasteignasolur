@@ -3,6 +3,8 @@ import Fee from '../fees/Fee';
 
 export default abstract class AbstractSeller implements Seller {
   public abstract name: string;
+  public abstract logoUrl: string;
+  public abstract color: string;
   public price: number;
   public hoursWorked: number;
 
