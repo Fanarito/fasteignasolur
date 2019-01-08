@@ -1,5 +1,7 @@
 <template>
-  <canvas height="400"></canvas>
+  <div class="chart-container">
+    <canvas class="chart"></canvas>
+  </div>
 </template>
 
 
@@ -14,6 +16,8 @@ export default class SellerBarComparisonChart extends Vue {
   private data: Chart.ChartConfiguration = {
     type: 'bar',
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       legend: {
         display: false,
       },
@@ -68,7 +72,7 @@ export default class SellerBarComparisonChart extends Vue {
   }
 
   private mounted() {
-    const ctx = this.$el as HTMLCanvasElement;
+    const ctx = this.$el.querySelector('.chart') as HTMLCanvasElement;
     this.chart = new Chart(ctx, this.data);
     this.onSellersChanged();
   }
@@ -83,4 +87,7 @@ export default class SellerBarComparisonChart extends Vue {
 </script>
 
 <style>
+.chart-container {
+  position: relative;
+}
 </style>

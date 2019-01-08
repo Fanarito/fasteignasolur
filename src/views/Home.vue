@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <div class="charts">
-      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"/>
-      <SellerBarComparisonChart :sellers="sellers" :price="price" :hours="hours"/>
+      <SellerBarComparisonChart class="chart" :sellers="sellers" :price="price" :hours="hours"/>
+      <SellerBarComparisonChart class="chart" :sellers="sellers" :price="price" :hours="hours"/>
     </div>
     <div class="details">
       <h1>Nákvæmar-ish tölur</h1>
@@ -90,6 +90,12 @@ export default class Home extends Vue {
   justify-content: space-between;
 }
 
+.charts > .chart {
+  height: 46vh;
+  width: 100%;
+  position: relative;
+}
+
 .details {
   grid-area: 'details';
   display: flex;
@@ -121,11 +127,17 @@ input {
   transition: transform 0.5s;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 768px) {
   .home {
     display: flex;
     height: auto;
     flex-direction: column-reverse;
+    width: auto;
+    height: auto;
+  }
+
+  .details {
+    height: auto;
   }
 
   .inputs {
@@ -135,6 +147,16 @@ input {
   .charts {
     display: flex;
     flex-direction: column;
+    height: auto;
+  }
+
+  .inputs > div {
+    width: 100%;
+  }
+
+  .sellers {
+    overflow-y: visible;
+    width: 100%;
   }
 }
 </style>
