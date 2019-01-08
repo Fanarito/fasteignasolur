@@ -17,7 +17,7 @@
       </div>
       <transition-group name="list" tag="div" class="sellers">
         <SellerComission
-          v-for="seller in sellers"
+          v-for="seller in sellersByPrice"
           :key="seller.name"
           :seller="seller"
           :price="price"
@@ -52,27 +52,20 @@ import MiklaborgSeller from '@/domain/sellers/MiklaborgSeller';
 export default class Home extends Vue {
   private price = 40;
   private hours = 10;
-  private sellers: Seller[] = [];
 
-  @Watch('hours')
-  @Watch('price')
-  onPriceChange() {
-    this.getSellers();
-  }
-
-  private mounted() {
-    this.getSellers();
-  }
-
-  private getSellers() {
+  get sellers(): Seller[] {
     const translatedPrice = this.price * 1_000_000;
-    this.sellers = [
-      new RemaxSeller(translatedPrice, this.hours),
+    return [
       new BorgSeller(translatedPrice, this.hours),
-      new LindSeller(translatedPrice, this.hours),
       new EignarmidlunSeller(translatedPrice, this.hours),
+      new LindSeller(translatedPrice, this.hours),
       new MiklaborgSeller(translatedPrice, this.hours),
-    ].sort((a, b) => a.totalFee() - b.totalFee());
+      new RemaxSeller(translatedPrice, this.hours),
+    ];
+  }
+
+  get sellersByPrice(): Seller[] {
+    return this.sellers.slice(0).sort((a, b) => a.totalFee() - b.totalFee());
   }
 }
 </script>
