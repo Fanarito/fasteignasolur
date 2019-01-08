@@ -31,7 +31,7 @@ export default class SellerBarComparisonChart extends Vue {
       tooltips: {
         callbacks: {
           label: ({ yLabel }) =>
-            yLabel == undefined ? '' : `${yLabel.toLocaleString()} kr.`,
+            yLabel === undefined ? '' : `${yLabel.toLocaleString()} kr.`,
         },
       },
     },
