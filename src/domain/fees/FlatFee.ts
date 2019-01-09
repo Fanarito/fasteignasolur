@@ -1,12 +1,19 @@
 import Fee from './Fee';
 
 export default class FlatFee implements Fee {
+  public readonly shortExplanation: string;
+
   private reason: string;
   private fee: number;
 
-  constructor(reason: string, fee: number) {
+  constructor(
+    reason: string,
+    fee: number,
+    shortExplanation: string = 'Flatt gjald',
+  ) {
     this.reason = reason;
     this.fee = fee;
+    this.shortExplanation = shortExplanation;
   }
 
   public totalFee(): number {

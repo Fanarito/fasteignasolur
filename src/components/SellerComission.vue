@@ -19,6 +19,7 @@
     </transition>
     <transition name="fade-height" mode="out-in">
       <div class="details-container" v-if="expanded">
+        <FeeBreakdownChart :fees="sellerFees"/>
         <div
           v-for="(fee, index) in seller.feesTaken(price, hours)"
           :key="index"
@@ -31,8 +32,14 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Seller from '@/domain/sellers/Seller';
+import Fee from '@/domain/fees/Fee';
+import FeeBreakdownChart from '@/components/FeeBreakdownChart.vue';
 
-@Component
+@Component({
+  components: {
+    FeeBreakdownChart,
+  },
+})
 export default class SellerComission extends Vue {
   @Prop() private seller!: Seller;
   @Prop() private price!: number;
@@ -40,6 +47,10 @@ export default class SellerComission extends Vue {
 
   get sellerFee(): number {
     return this.seller.totalFee(this.price, this.hours);
+  }
+
+  get sellerFees(): Fee[] {
+    return this.seller.feesTaken(this.price, this.hours);
   }
 
   get propertyPercentage(): string {

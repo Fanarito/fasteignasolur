@@ -1,12 +1,19 @@
 import Fee from './Fee';
 
 export default class HourlyFee implements Fee {
+  public readonly shortExplanation: string;
+
   private rate: number;
   private hours: number;
 
-  constructor(rate: number, hours: number) {
+  constructor(
+    rate: number,
+    hours: number,
+    shortExplanation: string = 'Tímagjald',
+  ) {
     this.rate = rate;
     this.hours = hours;
+    this.shortExplanation = shortExplanation;
   }
 
   public totalFee(): number {
