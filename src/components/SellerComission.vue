@@ -15,7 +15,7 @@
       </div>
     </div>
     <transition name="fade-width" mode="out-in">
-      <div v-if="expanded" class="divider"></div>
+      <div v-if="expanded" class="divider" :style="{ backgroundColor: seller.color }"></div>
     </transition>
     <transition name="fade-height" mode="out-in">
       <div class="details-container" v-if="expanded">
