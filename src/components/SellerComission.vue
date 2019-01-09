@@ -89,11 +89,11 @@ export default class SellerComission extends Vue {
 }
 
 .header h1 {
-  font-size: 24px;
+  font-size: 1.4em;
   margin: 16px 0 16px 0;
   display: flex;
   justify-content: space-between;
-  width: 75%;
+  width: 80%;
 }
 
 .property-percentage {
@@ -146,5 +146,16 @@ export default class SellerComission extends Vue {
 .fade-width-leave-to {
   opacity: 0;
   width: 0%;
+}
+
+@media (max-width: 1300px) {
+  .header h1 {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .seller-logo {
+    height: 22px;
+  }
 }
 </style>

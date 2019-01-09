@@ -76,7 +76,7 @@ export default class Home extends Vue {
   width: calc(100vw - 16px);
   height: calc(100vh - 16px);
   display: grid;
-  grid-template-columns: 65% calc(35% - 8px);
+  grid-template-columns: 60% minmax(30%, 40%);
   grid-template-rows: auto;
   grid-template-areas: 'charts details';
   grid-gap: 8px;
@@ -91,7 +91,7 @@ export default class Home extends Vue {
 }
 
 .charts > .chart {
-  height: 46vh;
+  height: 45vh;
   width: 100%;
   position: relative;
 }
@@ -105,14 +105,12 @@ export default class Home extends Vue {
 
 .sellers {
   overflow-y: auto;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .inputs {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 8px;
-  padding-top: 8px;
 }
 
 .inputs > div {
