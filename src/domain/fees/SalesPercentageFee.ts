@@ -37,10 +37,13 @@ export default class SalesPercentageFee implements Fee {
   }
 
   public explanation(): string {
-    return `Taka ${(this.percentage * 100).toFixed(
+    let explanation = `Taka ${(this.percentage * 100).toFixed(
       2,
-    )}% af söluverði, eða að minnsta kosti ${this.minimum.toLocaleString()} fyrir ${
-      this.reason
-    }`;
+    )}% af söluverði`;
+    if (this.minimum !== 0) {
+      explanation += `, eða að minnsta kosti ${this.minimum.toLocaleString()} kr.`;
+    }
+    explanation += ` fyrir ${this.reason}`;
+    return explanation;
   }
 }

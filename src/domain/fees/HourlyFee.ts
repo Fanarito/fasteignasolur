@@ -21,7 +21,7 @@ export default class HourlyFee implements Fee {
   }
 
   public explanation(): string {
-    return `Taka ${this.rate.toLocaleString()} á tímann, áætlaðir ${
+    return `Taka ${this.rate.toLocaleString()} kr. á tímann, áætlaðir ${
       this.hours
     } tímar.`;
   }

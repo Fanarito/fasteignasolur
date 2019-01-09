@@ -20,10 +20,16 @@
     <transition name="fade-height" mode="out-in">
       <div class="details-container" v-if="expanded">
         <FeeBreakdownChart :fees="sellerFees"/>
-        <div
-          v-for="(fee, index) in seller.feesTaken(price, hours)"
-          :key="index"
-        >{{fee.totalFee().toLocaleString()}} : {{fee.explanation()}}</div>
+        <table class="fee-table">
+          <tr>
+            <th>Gjald</th>
+            <th>Skýring</th>
+          </tr>
+          <tr v-for="(fee, index) in seller.feesTaken(price, hours)" :key="index">
+            <td class="nowrap">{{fee.totalFee().toLocaleString()}} kr.</td>
+            <td>{{fee.explanation()}}</td>
+          </tr>
+        </table>
       </div>
     </transition>
   </div>
@@ -82,6 +88,10 @@ export default class SellerComission extends Vue {
   width: calc(100% - 6px); /* account for shadow in width */
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -137,6 +147,17 @@ export default class SellerComission extends Vue {
 
 .details-container {
   padding: 16px;
+}
+
+.fee-table {
+  width: 100%;
+}
+
+.fee-table th,
+.fee-table td {
+  padding: 4px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 .fade-height-enter-active,
