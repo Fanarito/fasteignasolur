@@ -36,11 +36,7 @@ import Slider from '@/components/forms/Slider.vue';
 import Card from '@/components/ui/Card.vue';
 import SellerBarComparisonChart from '@/components/SellerBarComparisonChart.vue';
 import Seller from '@/domain/sellers/Seller';
-import RemaxSeller from '@/domain/sellers/RemaxSeller';
-import BorgSeller from '@/domain/sellers/BorgSeller';
-import LindSeller from '@/domain/sellers/LindSeller';
-import EignarmidlunSeller from '@/domain/sellers/EignarmidlunSeller';
-import MiklaborgSeller from '@/domain/sellers/MiklaborgSeller';
+import sellers from '@/domain/sellers/sellers';
 
 @Component({
   components: {
@@ -56,13 +52,7 @@ export default class Home extends Vue {
 
   get sellers(): Seller[] {
     const translatedPrice = this.price * 1_000_000;
-    return [
-      new BorgSeller(translatedPrice, this.hours),
-      new EignarmidlunSeller(translatedPrice, this.hours),
-      new LindSeller(translatedPrice, this.hours),
-      new MiklaborgSeller(translatedPrice, this.hours),
-      new RemaxSeller(translatedPrice, this.hours),
-    ];
+    return sellers.map(seller => new seller(translatedPrice, this.hours));
   }
 
   get sellersByPrice(): Seller[] {
