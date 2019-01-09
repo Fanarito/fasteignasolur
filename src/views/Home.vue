@@ -105,7 +105,6 @@ export default class Home extends Vue {
 
 .sellers {
   overflow-y: auto;
-  /* height: 100%; */
 }
 
 .inputs {
@@ -115,10 +114,6 @@ export default class Home extends Vue {
 
 .inputs > div {
   width: calc(50% - 4px); /* 8px padding */
-}
-
-input {
-  padding: 8px;
 }
 
 .list-move {
