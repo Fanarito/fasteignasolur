@@ -10,14 +10,14 @@ export default class BorgSeller extends AbstractSeller implements Seller {
   public logoUrl = 'img/sellers/borg.png';
   public color = '#ef7a1d';
 
-  public feesTaken(): Fee[] {
+  public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', this.price, 0.025, 489_800),
+      new SalesPercentageFee('aðstoðina', price, 0.025, 489_800),
       new FlatFee('gagnaöflun', 62_000),
-      new HourlyFee(20_000, this.hoursWorked),
+      new HourlyFee(20_000, hoursWorked),
       new SalesPercentageFee(
         'aðstoð og/eða skjalafrágang',
-        this.price,
+        price,
         0.01,
         272_800,
       ),

@@ -1,8 +1,13 @@
 <template>
   <div class="home">
     <div class="charts">
-      <SellerBarComparisonChart class="chart" :sellers="sellers" :price="price" :hours="hours"/>
-      <SellerBarComparisonChart class="chart" :sellers="sellers" :price="price" :hours="hours"/>
+      <SellerBarComparisonChart
+        class="chart"
+        :sellers="sellers"
+        :price="translatedPrice"
+        :hours="hours"
+      />
+      <SellerLineComparisonChart class="chart" :hours="hours"/>
     </div>
     <div class="details">
       <h1>Nákvæmar-ish tölur</h1>
@@ -21,7 +26,7 @@
           v-for="seller in sellersByPrice"
           :key="seller.name"
           :seller="seller"
-          :price="price"
+          :price="translatedPrice"
           :hours="hours"
         ></SellerComission>
       </transition-group>
@@ -35,6 +40,7 @@ import SellerComission from '@/components/SellerComission.vue';
 import Slider from '@/components/forms/Slider.vue';
 import Card from '@/components/ui/Card.vue';
 import SellerBarComparisonChart from '@/components/SellerBarComparisonChart.vue';
+import SellerLineComparisonChart from '@/components/SellerLineComparisonChart.vue';
 import Seller from '@/domain/sellers/Seller';
 import sellers from '@/domain/sellers/sellers';
 
@@ -42,6 +48,7 @@ import sellers from '@/domain/sellers/sellers';
   components: {
     SellerComission,
     SellerBarComparisonChart,
+    SellerLineComparisonChart,
     Slider,
     Card,
   },
@@ -49,14 +56,20 @@ import sellers from '@/domain/sellers/sellers';
 export default class Home extends Vue {
   private price = 40;
   private hours = 10;
+  private sellers = sellers;
 
-  get sellers(): Seller[] {
-    const translatedPrice = this.price * 1_000_000;
-    return sellers.map(seller => new seller(translatedPrice, this.hours));
+  get translatedPrice(): number {
+    return this.price * 1_000_000;
   }
 
   get sellersByPrice(): Seller[] {
-    return this.sellers.slice(0).sort((a, b) => a.totalFee() - b.totalFee());
+    return this.sellers
+      .slice(0)
+      .sort(
+        (a, b) =>
+          a.totalFee(this.price, this.hours) -
+          b.totalFee(this.price, this.hours),
+      );
   }
 }
 </script>

@@ -5,9 +5,9 @@ import MiklaborgSeller from './MiklaborgSeller';
 import RemaxSeller from './RemaxSeller';
 
 export default [
-  BorgSeller,
-  EignarmidlunSeller,
-  LindSeller,
-  MiklaborgSeller,
-  RemaxSeller,
+  new BorgSeller(),
+  new EignarmidlunSeller(),
+  new LindSeller(),
+  new MiklaborgSeller(),
+  new RemaxSeller(),
 ];

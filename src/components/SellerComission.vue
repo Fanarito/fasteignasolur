@@ -4,7 +4,7 @@
       <h1>
         <img class="seller-logo" :src="seller.logoUrl">
         <span class="seller-total">
-          {{seller.totalFee().toLocaleString()}} kr.
+          {{sellerFee.toLocaleString()}} kr.
           <span
             class="property-percentage"
           >{{propertyPercentage}}%</span>
@@ -38,10 +38,12 @@ export default class SellerComission extends Vue {
   @Prop() private price!: number;
   @Prop() private hours!: number;
 
+  get sellerFee(): number {
+    return this.seller.totalFee(this.price, this.hours);
+  }
+
   get propertyPercentage(): string {
-    return ((this.seller.totalFee() / (this.price * 1_000_000)) * 100).toFixed(
-      2,
-    );
+    return ((this.sellerFee / this.price) * 100).toFixed(2);
   }
 
   private openIconClasses = {

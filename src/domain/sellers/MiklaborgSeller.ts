@@ -10,9 +10,9 @@ export default class MiklaborgSeller extends AbstractSeller implements Seller {
   public logoUrl = 'img/sellers/miklaborg.png';
   public color = '#c92829';
 
-  public feesTaken(): Fee[] {
+  public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', this.price, 0.035, 489_800),
+      new SalesPercentageFee('aðstoðina', price, 0.035, 489_800),
       new FlatFee('gagnaöflun', 37200),
       new FlatFee('aðstoð og/eða skjalafrágang', 310_000),
     ];

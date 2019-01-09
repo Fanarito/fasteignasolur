@@ -11,14 +11,14 @@ export default class EignarmidlunSeller extends AbstractSeller
   public logoUrl = 'img/sellers/eignarmidlun.png';
   public color = '#244c82';
 
-  public feesTaken(): Fee[] {
+  public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', this.price, 0.025, 0),
+      new SalesPercentageFee('aðstoðina', price, 0.025, 0),
       new FlatFee('gagnaöflun', 30_000),
-      new HourlyFee(20_000, this.hoursWorked),
+      new HourlyFee(20_000, hoursWorked),
       new SalesPercentageFee(
         'aðstoð og/eða skjalafrágang',
-        this.price,
+        price,
         0.01,
         558_000,
       ),

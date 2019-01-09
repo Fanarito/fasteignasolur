@@ -10,11 +10,11 @@ export default class RemaxSeller extends AbstractSeller implements Seller {
   public logoUrl = 'img/sellers/remax.jpg';
   public color = '#0190de';
 
-  public feesTaken(): Fee[] {
+  public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', this.price, 0.0295, 365_800),
+      new SalesPercentageFee('aðstoðina', price, 0.0295, 365_800),
       new FlatFee('gagnaöflun', 59_900),
-      new HourlyFee(23_560, this.hoursWorked),
+      new HourlyFee(23_560, hoursWorked),
     ];
   }
 }

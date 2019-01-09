@@ -5,18 +5,11 @@ export default abstract class AbstractSeller implements Seller {
   public abstract name: string;
   public abstract logoUrl: string;
   public abstract color: string;
-  public price: number;
-  public hoursWorked: number;
 
-  constructor(price: number, hoursWorked: number) {
-    this.price = price;
-    this.hoursWorked = hoursWorked;
-  }
+  public abstract feesTaken(price: number, hoursWorked: number): Fee[];
 
-  public abstract feesTaken(): Fee[];
-
-  public totalFee(): number {
-    return this.feesTaken().reduce(
+  public totalFee(price: number, hoursWorked: number): number {
+    return this.feesTaken(price, hoursWorked).reduce(
       (totalFee, currFee) => (totalFee += currFee.totalFee()),
       0,
     );
