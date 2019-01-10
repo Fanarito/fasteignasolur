@@ -10,7 +10,10 @@
       <SellerLineComparisonChart class="chart" :hours="hours"/>
     </div>
     <div class="details">
-      <h1>Nákvæmar-ish tölur</h1>
+      <h1>
+        Nákvæmar-ish tölur
+        <span class="subtitle">Sumstaðar gæti vantað vsk.</span>
+      </h1>
       <div class="inputs">
         <Card>
           <div slot="header">Söluverð (milljónir)</div>
@@ -75,6 +78,12 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
+.subtitle {
+  font-size: 0.4em;
+  display: block;
+  font-style: italic;
+}
+
 .home {
   width: calc(100vw - 16px);
   height: calc(100vh - 16px);
