@@ -173,7 +173,7 @@ export default class SellerComission extends Vue {
 
 .fade-width-enter-active,
 .fade-width-leave-active {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   width: 100%;
 }
 .fade-width-enter,
