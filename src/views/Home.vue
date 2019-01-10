@@ -12,7 +12,7 @@
     <div class="details">
       <h1>
         Nákvæmar-ish tölur
-        <span class="subtitle">Sumstaðar gæti vantað vsk.</span>
+        <span class="subtitle">Vaskur bættur við.</span>
       </h1>
       <div class="inputs">
         <Card>
