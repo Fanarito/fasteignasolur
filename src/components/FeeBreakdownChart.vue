@@ -39,11 +39,11 @@ export default class FeeBreakdownChart extends Vue {
         {
           data: [],
           backgroundColor: [
-            '#ee4035',
-            '#fdf498',
-            '#7bc043',
-            '#f37736',
-            '#0392cf',
+            '#45b7b8',
+            '#f6c523',
+            '#ef6c57',
+            '#228c7b',
+            '#474f85',
           ],
         },
       ],
