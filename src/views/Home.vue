@@ -117,11 +117,14 @@ export default class Home extends Vue {
 
 .sellers {
   overflow-y: scroll;
+  flex-grow: 0;
 }
 
 .inputs {
   display: flex;
   justify-content: space-between;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .inputs > div {
