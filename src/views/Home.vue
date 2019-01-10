@@ -116,7 +116,7 @@ export default class Home extends Vue {
 }
 
 .sellers {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .inputs {
