@@ -67,8 +67,8 @@ export default class Home extends Vue {
       .slice(0)
       .sort(
         (a, b) =>
-          a.totalFee(this.price, this.hours) -
-          b.totalFee(this.price, this.hours),
+          a.totalFee(this.translatedPrice, this.hours) -
+          b.totalFee(this.translatedPrice, this.hours),
       );
   }
 }
