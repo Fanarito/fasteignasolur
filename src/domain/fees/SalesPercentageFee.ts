@@ -43,7 +43,7 @@ export default class SalesPercentageFee implements Fee {
     if (this.minimum !== 0) {
       explanation += `, eða að minnsta kosti ${this.minimum.toLocaleString()} kr.`;
     }
-    explanation += ` fyrir ${this.reason}`;
+    explanation += ` ${this.reason}`;
     return explanation;
   }
 }

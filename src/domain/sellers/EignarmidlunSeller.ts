@@ -13,11 +13,11 @@ export default class EignarmidlunSeller extends AbstractSeller
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', price, 0.031, 0),
-      new FlatFee('gagnaöflun', 30_000, 'Gagnaöflun'),
+      new SalesPercentageFee('í söluþóknun', price, 0.031, 0),
+      new FlatFee('fyrir gagnaöflun', 30_000, 'Gagnaöflun'),
       new HourlyFee(20_000, hoursWorked),
       new SalesPercentageFee(
-        'aðstoð og/eða skjalafrágang',
+        'fyrir aðstoð og/eða skjalafrágang',
         price,
         0.01,
         558_000,

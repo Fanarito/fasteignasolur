@@ -21,8 +21,6 @@ export default class FlatFee implements Fee {
   }
 
   public explanation(): string {
-    return `Flatt ${this.fee.toLocaleString()} kr. gjald fyrir ${
-      this.reason
-    }`;
+    return `Flatt ${this.fee.toLocaleString()} kr. gjald ${this.reason}`;
   }
 }

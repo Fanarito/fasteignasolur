@@ -12,8 +12,8 @@ export default class RemaxSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', price, 0.03658, 365_800),
-      new FlatFee('gagnaöflun', 59_900, 'Gagnaöflun'),
+      new SalesPercentageFee('í söluþóknun', price, 0.03658, 365_800),
+      new FlatFee('fyrir gagnaöflun', 59_900, 'Gagnaöflun'),
       new HourlyFee(23_560, hoursWorked),
     ];
   }

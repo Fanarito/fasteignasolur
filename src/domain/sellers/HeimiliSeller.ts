@@ -12,10 +12,14 @@ export default class HeimiliSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('aðstoðina', price, 0.031, 0),
-      new FlatFee('að setja eign á söluskrá', 59_900, 'Skrá á söl'),
+      new SalesPercentageFee('í söluþóknun', price, 0.031, 0),
+      new FlatFee('fyrir að setja eign á söluskrá', 59_900, 'Skrá á söl'),
       new HourlyFee(12_000, hoursWorked),
-      new FlatFee('aðstoð og/eða skjalafrágang', 295_000, 'Skjalafrágangur'),
+      new FlatFee(
+        'fyrir aðstoð og/eða skjalafrágang',
+        295_000,
+        'Skjalafrágangur',
+      ),
     ];
   }
 }
