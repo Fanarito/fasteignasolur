@@ -116,7 +116,7 @@ export default class Home extends Vue {
 }
 
 .sellers {
-  overflow-y: scroll;
+  overflow-y: auto;
   flex-grow: 0;
 }
 
@@ -125,6 +125,8 @@ export default class Home extends Vue {
   justify-content: space-between;
   flex-shrink: 0;
   flex-grow: 0;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .inputs > div {

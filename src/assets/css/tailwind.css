@@ -1,0 +1,15 @@
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  @apply rounded overflow-hidden shadow bg-white;
+}
+
+.card-header {
+  @apply p-3;
+}
+
+.card-content {
+  @apply p-3;
+}
