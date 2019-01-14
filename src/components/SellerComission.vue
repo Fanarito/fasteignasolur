@@ -1,9 +1,9 @@
 <template>
   <div
-    class="rounded overflow-hidden shadow bg-white mb-2 cursor-pointer"
+    class="rounded overflow-hidden shadow bg-white mb-2 border border-grey-light"
     :style="{ borderLeft: `4px solid ${seller.color}` }"
   >
-    <div class="flex p-2 justify-between" @click="expand">
+    <div class="flex p-2 justify-between cursor-pointer" @click="expand">
       <div class="flex w-full lg:w-3/4 xl:text-xl justify-between">
         <img class="h-6 xl:h-8" :src="seller.logoUrl">
         <div class="seller-total">
@@ -21,7 +21,9 @@
           <div v-show="expanded" class="divider" :style="{ backgroundColor: seller.color }"></div>
         </transition>
         <div class="p-4">
-          <FeeBreakdownChart :fees="sellerFees"/>
+          <div class="h-32">
+            <FeeBreakdownChart v-if="expanded" class="h-32" :fees="sellerFees"/>
+          </div>
           <table class="fee-table w-full">
             <tr>
               <th>Gjald</th>

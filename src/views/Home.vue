@@ -89,8 +89,7 @@ export default class Home extends Vue {
 }
 
 .home {
-  width: calc(100vw - 16px);
-  height: calc(100vh - 16px);
+  height: 100vh;
   display: grid;
   grid-template-columns: 60% minmax(30%, 40%);
   grid-template-rows: auto;

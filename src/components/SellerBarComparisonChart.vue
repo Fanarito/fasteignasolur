@@ -1,5 +1,5 @@
 <template>
-  <div class="chart-container">
+  <div class="relative">
     <canvas class="chart"></canvas>
   </div>
 </template>
@@ -86,9 +86,3 @@ export default class SellerBarComparisonChart extends Vue {
   }
 }
 </script>
-
-<style>
-.chart-container {
-  position: relative;
-}
-</style>

@@ -2,7 +2,11 @@
 @tailwind components;
 
 .card {
-  @apply rounded overflow-hidden shadow bg-white;
+  @apply rounded overflow-hidden shadow bg-white border border-grey-light;
+}
+
+.panel {
+  @apply rounded overflow-hidden shadow bg-white p-2 border-grey-light;
 }
 
 .card-header {
