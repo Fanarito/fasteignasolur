@@ -14,15 +14,19 @@
         Nákvæmar-ish tölur
         <span class="subtitle">Vaskur bættur við.</span>
       </h1>
-      <div class="inputs">
-        <Card>
-          <div slot="header">Söluverð (milljónir)</div>
-          <Slider v-model.number="price" :max="200"/>
-        </Card>
-        <Card>
-          <div slot="header">Tímar</div>
-          <Slider v-model.number="hours" :max="100"/>
-        </Card>
+      <div class="flex flex-none flex-col md:flex-row md:-mx-2 md:my-2">
+        <div class="py-2 md:px-2">
+          <Card>
+            <div slot="header">Söluverð (milljónir)</div>
+            <Slider v-model.number="price" :max="200"/>
+          </Card>
+        </div>
+        <div class="py-2 md:px-2">
+          <Card>
+            <div slot="header">Tímar</div>
+            <Slider v-model.number="hours" :max="100"/>
+          </Card>
+        </div>
       </div>
       <transition-group name="list" tag="div" class="sellers">
         <SellerComission
@@ -118,15 +122,6 @@ export default class Home extends Vue {
 .sellers {
   overflow-y: auto;
   flex-grow: 0;
-}
-
-.inputs {
-  display: flex;
-  justify-content: space-between;
-  flex-shrink: 0;
-  flex-grow: 0;
-  margin-bottom: 1em;
-  margin-top: 1em;
 }
 
 .inputs > div {

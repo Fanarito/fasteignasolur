@@ -16,10 +16,14 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.1.0",
     "@types/chart.js": "^2.7.42",
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-typescript": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
+    "glob-all": "^3.1.0",
+    "path": "^0.12.7",
+    "purgecss-webpack-plugin": "^1.4.0",
     "tailwindcss": "^0.7.3",
     "tslint-config-prettier": "^1.17.0",
     "typescript": "^3.0.0",
