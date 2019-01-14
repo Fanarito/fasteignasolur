@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded overflow-hidden shadow bg-white mb-2"
+    class="rounded overflow-hidden shadow bg-white mb-2 cursor-pointer"
     :style="{ borderLeft: `4px solid ${seller.color}` }"
   >
     <div class="flex p-2 justify-between" @click="expand">
