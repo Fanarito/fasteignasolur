@@ -31,5 +31,10 @@ module.exports = {
         whitelist: ['html'],
       }),
     ],
+    resolve: {
+      alias: {
+        'chart.js': 'chart.js/dist/Chart.js',
+      },
+    },
   },
 };
