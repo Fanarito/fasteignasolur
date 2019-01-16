@@ -11,7 +11,7 @@
     </div>
     <div class="details">
       <h1>
-        Nákvæmar-ish tölur
+        Nákvæmar-ish tölur m.v. einkasölu
         <span class="subtitle">Vaskur bættur við.</span>
       </h1>
       <div class="flex flex-none flex-col md:flex-row md:-mx-2 md:my-2">
