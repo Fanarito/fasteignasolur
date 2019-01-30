@@ -1,6 +1,9 @@
-const purgeCssPlugin = require('purgecss-webpack-plugin');
+const PurgeCssPlugin = require('purgecss-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const glob = require('glob-all');
 const path = require('path');
+
+const productionGzipExtensions = ['js', 'css'];
 
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
 // class names.
@@ -16,7 +19,7 @@ module.exports = {
   configureWebpack: {
     // Merged into the final Webpack config
     plugins: [
-      new purgeCssPlugin({
+      new PurgeCssPlugin({
         paths: glob.sync([
           path.join(__dirname, './src/index.html'),
           path.join(__dirname, './**/*.vue'),
@@ -29,6 +32,11 @@ module.exports = {
           },
         ],
         whitelist: ['html'],
+      }),
+      new CompressionWebpackPlugin({
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
       }),
     ],
     resolve: {
