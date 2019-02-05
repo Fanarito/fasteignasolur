@@ -10,9 +10,9 @@
       <SellerLineComparisonChart class="chart" :hours="hours"/>
     </div>
     <div class="details">
-      <h1>
-        Nákvæmar-ish tölur m.v. einkasölu
-        <span class="subtitle">Vaskur bættur við.</span>
+      <h1 class="title">
+        <img class="logo" src="/img/icons/fasteignasölur.png">
+        <span class="subtitle">Samanburður á þóknun fasteignasala við sölu samkvæmt verðskrá.</span>
       </h1>
       <div class="flex flex-none flex-col md:flex-row md:-mx-2 md:my-2">
         <div class="py-2 md:px-2">
@@ -82,6 +82,10 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
+.logo {
+  height: 5rem;
+}
+
 .subtitle {
   font-size: 0.4em;
   display: block;
