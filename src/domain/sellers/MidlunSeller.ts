@@ -9,6 +9,7 @@ export default class MidlunSeller extends AbstractSeller implements Seller {
   public name = 'Miðlun';
   public logoUrl = 'img/sellers/midlun.png';
   public color = '#3d6101';
+  public tariffUrl = 'https://midlunfasteignir.is/gjaldskra/';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

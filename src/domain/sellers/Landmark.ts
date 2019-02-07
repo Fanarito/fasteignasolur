@@ -9,6 +9,7 @@ export default class LandmarkSeller extends AbstractSeller implements Seller {
   public name = 'Landmark';
   public logoUrl = 'img/sellers/landmark.png';
   public color = '#356093';
+  public tariffUrl = 'https://www.landmark.is/text1/';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

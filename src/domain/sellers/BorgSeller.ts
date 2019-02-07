@@ -9,6 +9,7 @@ export default class BorgSeller extends AbstractSeller implements Seller {
   public name = 'Borg';
   public logoUrl = 'img/sellers/borg.png';
   public color = '#ef7a1d';
+  public tariffUrl = 'https://www.fastborg.is/gjaldska';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

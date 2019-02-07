@@ -17,4 +17,13 @@
   @apply p-3;
 }
 
+.btn-white {
+  @apply bg-white text-grey-darkest font-semibold py-2 px-4 border border-grey-light rounded shadow;
+  transition: background-color 200ms;
+}
+
+.btn-white:hover {
+  @apply bg-grey-light;
+}
+
 @tailwind utilities;

@@ -10,6 +10,7 @@ export default class NyttHeimiliSeller extends AbstractSeller
   public name = 'Nýtt Heimili';
   public logoUrl = 'img/sellers/nyttheimili.png';
   public color = '#086ca8';
+  public tariffUrl = 'https://www.nyttheimili.is/gjaldskra/';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

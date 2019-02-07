@@ -9,6 +9,7 @@ export default class EignaverSeller extends AbstractSeller implements Seller {
   public name = 'Eignaver';
   public logoUrl = 'img/sellers/eignaver.png';
   public color = '#ff1803';
+  public tariffUrl = 'https://www.eignaver.is/text2/';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

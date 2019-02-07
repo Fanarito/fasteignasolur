@@ -9,6 +9,7 @@ export default class LindSeller extends AbstractSeller implements Seller {
   public name = 'Lind';
   public logoUrl = 'img/sellers/lind.jpg';
   public color = '#e0142f';
+  public tariffUrl = 'https://www.fastlind.is/gjaldskra';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

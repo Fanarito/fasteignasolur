@@ -9,6 +9,7 @@ export default class HeimiliSeller extends AbstractSeller implements Seller {
   public name = 'Heimili';
   public logoUrl = 'img/sellers/heimili.png';
   public color = '#f27d00';
+  public tariffUrl = 'https://www.heimili.is/upplysingar';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

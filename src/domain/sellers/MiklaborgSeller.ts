@@ -8,6 +8,7 @@ export default class MiklaborgSeller extends AbstractSeller implements Seller {
   public name = 'Miklaborg';
   public logoUrl = 'img/sellers/miklaborg.png';
   public color = '#c92829';
+  public tariffUrl = 'http://www.miklaborg.is/um-okkur/verdskra-mikluborgar';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

@@ -34,6 +34,11 @@
               <td>{{fee.explanation()}}</td>
             </tr>
           </table>
+          <div class="actions pt-4">
+            <a :href="seller.tariffUrl" target="blank">
+              <button class="btn-white">Gjaldskrá 🔗</button>
+            </a>
+          </div>
         </div>
       </div>
     </transition>
