@@ -6,6 +6,7 @@ export default abstract class AbstractSeller implements Seller {
   public abstract logoUrl: string;
   public abstract color: string;
   public abstract tariffUrl: string;
+  public showName = false;
 
   public abstract feesTaken(price: number, hoursWorked: number): Fee[];
 
