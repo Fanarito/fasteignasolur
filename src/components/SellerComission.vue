@@ -50,9 +50,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import Loader from '@/components/Loader.vue';
 import Seller from '@/domain/sellers/Seller';
 import Fee from '@/domain/fees/Fee';
-import FeeBreakdownChart from '@/components/FeeBreakdownChart.vue';
+
+const FeeBreakdownChart = () =>
+  ({
+    component: import(/* webpackChunkName: "charting" */ '@/components/FeeBreakdownChart.vue'),
+    loading: Loader,
+  } as any);
 
 @Component({
   components: {
