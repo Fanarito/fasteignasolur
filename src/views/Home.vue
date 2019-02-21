@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="charts">
+    <div class="charts" v-if="!this.$root.$data.isMobile">
       <SellerBarComparisonChart
         class="chart"
         :sellers="sellers"
@@ -46,10 +46,21 @@ import { Component, Vue, Watch } from 'vue-property-decorator';
 import SellerComission from '@/components/SellerComission.vue';
 import Slider from '@/components/forms/Slider.vue';
 import Card from '@/components/ui/Card.vue';
-import SellerBarComparisonChart from '@/components/SellerBarComparisonChart.vue';
-import SellerLineComparisonChart from '@/components/SellerLineComparisonChart.vue';
+import Loader from '@/components/Loader.vue';
 import Seller from '@/domain/sellers/Seller';
 import sellers from '@/domain/sellers/sellers';
+
+const SellerBarComparisonChart = () =>
+  ({
+    component: import(/* webpackChunkName: "charting" */ '@/components/SellerBarComparisonChart.vue'),
+    loading: Loader,
+  } as any);
+
+const SellerLineComparisonChart = () =>
+  ({
+    component: import(/* webpackChunkName: "charting" */ '@/components/SellerLineComparisonChart.vue'),
+    loading: Loader,
+  } as any);
 
 @Component({
   components: {

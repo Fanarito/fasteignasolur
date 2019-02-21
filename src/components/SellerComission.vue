@@ -5,7 +5,10 @@
   >
     <div class="flex p-2 justify-between cursor-pointer" @click="expand">
       <div class="flex w-full lg:w-3/4 xl:text-xl justify-between">
-        <img class="h-6 xl:h-8" :src="seller.logoUrl">
+        <div class="seller-name-display">
+          <img class="h-6 xl:h-8" :src="seller.logoUrl">
+          <span v-if="seller.showName" class="seller-name">{{seller.name}}</span>
+        </div>
         <div class="seller-total">
           {{sellerFee.toLocaleString()}} kr.
           <span class="text-xs">{{propertyPercentage}}%</span>
@@ -47,9 +50,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import Loader from '@/components/Loader.vue';
 import Seller from '@/domain/sellers/Seller';
 import Fee from '@/domain/fees/Fee';
-import FeeBreakdownChart from '@/components/FeeBreakdownChart.vue';
+
+const FeeBreakdownChart = () =>
+  ({
+    component: import(/* webpackChunkName: "charting" */ '@/components/FeeBreakdownChart.vue'),
+    loading: Loader,
+  } as any);
 
 @Component({
   components: {
@@ -92,6 +101,16 @@ export default class SellerComission extends Vue {
 <style scoped>
 .nowrap {
   white-space: nowrap;
+}
+
+.seller-name-display {
+  display: flex;
+  align-items: center;
+}
+
+.seller-name-display .seller-name {
+  padding-left: 0.4em;
+  user-select: none;
 }
 
 .seller-total {
