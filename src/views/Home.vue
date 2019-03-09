@@ -122,6 +122,7 @@ export default class Home extends Vue {
 .header {
   display: flex;
   justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .links {
