@@ -10,10 +10,30 @@
       <SellerLineComparisonChart class="chart" :hours="hours"/>
     </div>
     <div class="details">
-      <h1 class="title">
-        <img class="logo" src="/img/icons/fasteignasölur.png">
-        <span class="subtitle">Samanburður á þóknun fasteignasala við sölu samkvæmt verðskrá.</span>
-      </h1>
+      <div class="header">
+        <h1 class="title">
+          <img class="logo" src="/img/icons/fasteignasölur.png">
+          <span class="subtitle">Samanburður á þóknun fasteignasala við sölu samkvæmt verðskrá.</span>
+        </h1>
+        <div class="links">
+          <a
+            href="https://github.com/Fanarito/fasteignasolur"
+            target="blank"
+            class="link"
+            title="Sjá kóða"
+          >
+            <img src="@/assets/icons/GitHub-Mark-32px.png" alt="GitHub Repository">
+          </a>
+          <a
+            href="mailto:viktor.saevars@gmail.com"
+            target="blank"
+            class="link"
+            title="Senda fyrirspurn"
+          >
+            <img src="@/assets/icons/iconmonstr-email-10.svg" alt="Senda fyrirspurn">
+          </a>
+        </div>
+      </div>
       <div class="flex flex-none flex-col md:flex-row md:-mx-2 md:my-2">
         <div class="py-2 md:px-2">
           <Card>
@@ -95,6 +115,29 @@ export default class Home extends Vue {
 <style scoped>
 .logo {
   height: 5rem;
+  width: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links {
+  padding: 0.25rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+.links > .link {
+  height: 32px;
+  width: 32px;
+}
+
+.links > .link > img {
+  height: inherit;
+  width: inherit;
 }
 
 .subtitle {
