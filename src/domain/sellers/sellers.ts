@@ -1,3 +1,4 @@
+import AsSeller from './AsSeller';
 import BorgSeller from './BorgSeller';
 import EignarmidlunSeller from './EignarmidlunSeller';
 import EignaverSeller from './EignaverSeller';
@@ -11,6 +12,7 @@ import NyttHeimiliSeller from './NyttHeimiliSeller';
 import RemaxSeller from './RemaxSeller';
 
 export default [
+  new AsSeller(),
   new BorgSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
