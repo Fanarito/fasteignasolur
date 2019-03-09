@@ -116,6 +116,7 @@ export default class Home extends Vue {
 .logo {
   height: 5rem;
   width: auto;
+  object-fit: contain;
 }
 
 .header {
