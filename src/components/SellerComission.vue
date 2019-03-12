@@ -38,7 +38,7 @@
             </tr>
           </table>
           <div class="actions pt-4">
-            <a :href="seller.tariffUrl" target="blank">
+            <a :href="seller.tariffUrl" target="_blank">
               <button class="btn-white">Gjaldskrá 🔗</button>
             </a>
           </div>

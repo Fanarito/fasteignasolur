@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="app" class="home">
     <div class="charts" v-if="!this.$root.$data.isMobile">
       <SellerBarComparisonChart
         class="chart"
@@ -105,7 +105,17 @@ export default class Home extends Vue {
 }
 </script>
 
-<style scoped>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+#app {
+  background-color: #f5f5f5;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -114,7 +124,7 @@ export default class Home extends Vue {
 }
 
 .title {
-  font-size: 2.4em;
+  font-size: 2em;
   display: flex;
   align-items: center;
   font-weight: lighter;
@@ -209,18 +219,5 @@ export default class Home extends Vue {
     overflow-y: visible;
     width: 100%;
   }
-}
-</style>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-body {
-  background-color: #f5f5f5;
 }
 </style>
