@@ -108,8 +108,11 @@ export default class Home extends Vue {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 
-#app {
+body {
   background-color: #f5f5f5;
+}
+
+#app {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
