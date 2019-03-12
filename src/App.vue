@@ -192,7 +192,7 @@ export default class Home extends Vue {
     height: auto;
     flex-direction: column-reverse;
     width: auto;
-    height: auto;
+    height: fit-content;
   }
 
   .details {
