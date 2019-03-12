@@ -16,14 +16,6 @@ export default class EignarmidlunSeller extends AbstractSeller
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.02418, 0),
       new FlatFee('fyrir gagnaöflun', 30_000, 'Gagnaöflun'),
-      new HourlyFee(20_000, hoursWorked),
-      new SalesPercentageFee(
-        'fyrir aðstoð og/eða skjalafrágang',
-        price,
-        0.01,
-        558_000,
-        'Skjalafrágangur',
-      ),
     ];
   }
 }

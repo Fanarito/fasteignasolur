@@ -14,11 +14,6 @@ export default class MiklaborgSeller extends AbstractSeller implements Seller {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.031, 489_800),
       new FlatFee('fyrir gagnaöflun', 37200, 'Gagnaöflun'),
-      new FlatFee(
-        'fyrir aðstoð og/eða skjalafrágang',
-        310_000,
-        'Skjalafrágangur',
-      ),
     ];
   }
 }

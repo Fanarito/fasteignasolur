@@ -19,7 +19,6 @@ export default class MidlunSeller extends AbstractSeller implements Seller {
         48_945,
         'Gagnaöflunar og auglýsingagjald',
       ),
-      new HourlyFee(20_000, hoursWorked),
     ];
   }
 }

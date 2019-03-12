@@ -16,14 +16,6 @@ export default class NyttHeimiliSeller extends AbstractSeller
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.02418, 334_800),
       new FlatFee('fyrir gagnaöflun', 49_600, 'Gagnaöflunargjald'),
-      new HourlyFee(22_320, hoursWorked),
-      new SalesPercentageFee(
-        'fyrir aðstoð og/eða skjalafrágang',
-        price,
-        0.01,
-        248_000,
-        'Skjalafrágangur',
-      ),
     ];
   }
 }

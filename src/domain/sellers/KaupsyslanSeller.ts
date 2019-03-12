@@ -16,8 +16,6 @@ export default class KaupsyslanSeller extends AbstractSeller implements Seller {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.0217, 496_000),
       new FlatFee('fyrir gagnaöflun', 52_900, 'Gagnaöflun'),
-      new HourlyFee(23_900, hoursWorked),
-      new FlatFee('fyrir frágang', 186_000, 'Skjalafrágangur'),
     ];
   }
 }

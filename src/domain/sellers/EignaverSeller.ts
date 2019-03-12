@@ -15,14 +15,6 @@ export default class EignaverSeller extends AbstractSeller implements Seller {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.02356, 396_400),
       new FlatFee('fyrir gagnaöflun', 43_400, 'Gagnaöflun'),
-      new HourlyFee(24_800, hoursWorked),
-      new SalesPercentageFee(
-        'fyrir aðstoð og/eða skjalafrágang',
-        price,
-        0.01,
-        248_000,
-        'Skjalafrágangur',
-      ),
     ];
   }
 }
