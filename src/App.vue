@@ -16,6 +16,7 @@
           <div class="pl-2 flex flex-col">
             <span>Fasteignasölur</span>
             <span class="subtitle">Samanburður á þóknun fasteignasala við sölu samkvæmt verðskrá.</span>
+            <span class="subtitle">Uppfært: {{buildTime}}</span>
           </div>
         </div>
         <div class="links">
@@ -88,6 +89,10 @@ export default class Home extends Vue {
   private price = 40;
   private hours = 10;
   private sellers = sellers;
+
+  get buildTime() {
+    return new Date(process.env.BUILD_TIME).toLocaleString('is-IS');
+  }
 
   get translatedPrice(): number {
     return this.price * 1_000_000;

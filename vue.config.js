@@ -2,6 +2,7 @@ const PurgeCssPlugin = require('purgecss-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const glob = require('glob-all');
 const path = require('path');
+const webpack = require('webpack');
 
 const productionGzipExtensions = ['js', 'css'];
 
@@ -37,6 +38,9 @@ module.exports = {
         filename: '[path].gz[query]',
         algorithm: 'gzip',
         test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+      }),
+      new webpack.EnvironmentPlugin({
+        BUILD_TIME: new Date(),
       }),
     ],
     resolve: {

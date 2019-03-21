@@ -28,6 +28,7 @@
     "tailwindcss": "^0.7.3",
     "tslint-config-prettier": "^1.17.0",
     "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.27.1"
   }
 }
