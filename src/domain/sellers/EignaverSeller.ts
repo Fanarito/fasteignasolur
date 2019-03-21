@@ -2,7 +2,6 @@ import AbstractSeller from './AbstractSeller';
 import Seller from './Seller';
 import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
-import HourlyFee from '../fees/HourlyFee';
 import FlatFee from '../fees/FlatFee';
 
 export default class EignaverSeller extends AbstractSeller implements Seller {

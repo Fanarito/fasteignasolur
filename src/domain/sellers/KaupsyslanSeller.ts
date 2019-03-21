@@ -3,7 +3,6 @@ import Seller from './Seller';
 import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
 import FlatFee from '../fees/FlatFee';
-import HourlyFee from '../fees/HourlyFee';
 
 export default class KaupsyslanSeller extends AbstractSeller implements Seller {
   public name = 'Kaupsýslan';

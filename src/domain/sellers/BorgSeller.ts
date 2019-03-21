@@ -2,7 +2,6 @@ import Seller from './Seller';
 import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
 import FlatFee from '../fees/FlatFee';
-import HourlyFee from '../fees/HourlyFee';
 import AbstractSeller from './AbstractSeller';
 
 export default class BorgSeller extends AbstractSeller implements Seller {
