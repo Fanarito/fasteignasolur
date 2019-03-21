@@ -2,7 +2,6 @@ import Seller from './Seller';
 import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
 import FlatFee from '../fees/FlatFee';
-import HourlyFee from '../fees/HourlyFee';
 import AbstractSeller from './AbstractSeller';
 
 export default class RemaxSeller extends AbstractSeller implements Seller {
@@ -13,7 +12,7 @@ export default class RemaxSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('í söluþóknun', price, 0.03658, 365_800),
+      new SalesPercentageFee('í söluþóknun', price, 0.031, 365_800),
       new FlatFee('fyrir gagnaöflun', 59_900, 'Gagnaöflun'),
     ];
   }
