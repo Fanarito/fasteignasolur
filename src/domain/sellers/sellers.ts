@@ -8,6 +8,7 @@ import LandmarkSeller from './Landmark';
 import LindSeller from './LindSeller';
 import MidlunSeller from './MidlunSeller';
 import MiklaborgSeller from './MiklaborgSeller';
+import NetstofanSeller from './NetstofanSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
 import RemaxSeller from './RemaxSeller';
 
@@ -22,6 +23,7 @@ export default [
   new LindSeller(),
   new MidlunSeller(),
   new MiklaborgSeller(),
+  new NetstofanSeller(),
   new NyttHeimiliSeller(),
   new RemaxSeller(),
 ];

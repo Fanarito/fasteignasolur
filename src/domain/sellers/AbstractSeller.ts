@@ -12,7 +12,8 @@ export default abstract class AbstractSeller implements Seller {
 
   public totalFee(price: number, hoursWorked: number): number {
     return this.feesTaken(price, hoursWorked).reduce(
-      (totalFee, currFee) => (totalFee += currFee.totalFee()),
+      (totalFee, currFee) =>
+        currFee.includedInTotal ? (totalFee += currFee.totalFee()) : totalFee,
       0,
     );
   }

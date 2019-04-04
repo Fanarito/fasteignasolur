@@ -2,11 +2,13 @@ import Fee from './Fee';
 
 export default class SalesPercentageFee implements Fee {
   public readonly shortExplanation: string;
+  public readonly includedInTotal: boolean;
 
   private reason: string;
   private price: number;
   private percentage: number;
   private minimum: number;
+  private fee: number;
 
   /**
    * The sale commission fee is a percentage of the price of the property
@@ -19,21 +21,25 @@ export default class SalesPercentageFee implements Fee {
     price: number,
     percentage: number,
     minimum: number,
-    shortExplanation: string = 'Söluprósenta',
+    { shortExplanation = 'Söluprósenta', includedInTotal = true } = {},
   ) {
     this.reason = reason;
     this.price = price;
     this.percentage = percentage;
     this.minimum = minimum;
     this.shortExplanation = shortExplanation;
+    this.includedInTotal = includedInTotal;
+
+    const fee = this.percentage * this.price;
+    if (fee < this.minimum) {
+      this.fee = this.minimum;
+    } else {
+      this.fee = fee;
+    }
   }
 
   public totalFee(): number {
-    const fee = this.percentage * this.price;
-    if (fee < this.minimum) {
-      return this.minimum;
-    }
-    return fee;
+    return this.fee;
   }
 
   public explanation(): string {

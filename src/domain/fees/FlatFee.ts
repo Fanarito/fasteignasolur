@@ -2,6 +2,7 @@ import Fee from './Fee';
 
 export default class FlatFee implements Fee {
   public readonly shortExplanation: string;
+  public readonly includedInTotal: boolean;
 
   private reason: string;
   private fee: number;
@@ -9,11 +10,12 @@ export default class FlatFee implements Fee {
   constructor(
     reason: string,
     fee: number,
-    shortExplanation: string = 'Flatt gjald',
+    { shortExplanation = 'Gagnaöflun', includedInTotal = true } = {},
   ) {
     this.reason = reason;
     this.fee = fee;
     this.shortExplanation = shortExplanation;
+    this.includedInTotal = includedInTotal;
   }
 
   public totalFee(): number {

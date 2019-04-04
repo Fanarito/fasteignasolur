@@ -13,11 +13,9 @@ export default class MidlunSeller extends AbstractSeller implements Seller {
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.02232, 310_000),
-      new FlatFee(
-        'fyrir gagnaöflun og auglýsingar',
-        48_945,
-        'Gagnaöflunar og auglýsingagjald',
-      ),
+      new FlatFee('fyrir gagnaöflun og auglýsingar', 48_945, {
+        shortExplanation: 'Gagnaöflunar og auglýsingagjald',
+      }),
     ];
   }
 }

@@ -6,12 +6,14 @@
     <div class="flex p-2 justify-between cursor-pointer" @click="expand">
       <div class="flex w-full lg:w-3/4 xl:text-xl justify-between">
         <div class="seller-name-display">
-          <img class="h-6 xl:h-8" :src="seller.logoUrl">
-          <span v-if="seller.showName" class="seller-name">{{seller.name}}</span>
+          <img class="h-6 xl:h-8" :src="seller.logoUrl" :alt="seller.name" />
+          <span v-if="seller.showName" class="seller-name">{{
+            seller.name
+          }}</span>
         </div>
         <div class="seller-total">
-          {{sellerFee.toLocaleString()}} kr.
-          <span class="text-xs">{{propertyPercentage}}%</span>
+          {{ sellerFee.toLocaleString() }} kr.
+          <span class="text-xs">{{ propertyPercentage }}%</span>
         </div>
       </div>
       <div class="header-icon">
@@ -21,22 +23,34 @@
     <transition name="fade-height" mode="out-in">
       <div v-show="expanded">
         <transition name="fade-width" mode="out-in">
-          <div v-show="expanded" class="divider" :style="{ backgroundColor: seller.color }"></div>
+          <div
+            v-show="expanded"
+            class="divider"
+            :style="{ backgroundColor: seller.color }"
+          ></div>
         </transition>
         <div class="p-4">
           <div class="h-32">
-            <FeeBreakdownChart v-if="expanded" class="h-32" :fees="sellerFees"/>
+            <FeeBreakdownChart
+              v-if="expanded"
+              class="h-32"
+              :fees="sellerFees"
+            />
           </div>
           <table class="fee-table w-full">
             <tr>
               <th>Gjald</th>
               <th>Skýring</th>
             </tr>
-            <tr v-for="(fee, index) in seller.feesTaken(price, hours)" :key="index">
-              <td class="nowrap">{{fee.totalFee().toLocaleString()}} kr.</td>
-              <td>{{fee.explanation()}}</td>
+            <tr
+              v-for="(fee, index) in seller.feesTaken(price, hours)"
+              :key="index"
+            >
+              <td class="nowrap">{{ fee.totalFee().toLocaleString() }} kr.</td>
+              <td>{{ fee.explanation() }}</td>
             </tr>
           </table>
+
           <div class="actions pt-4">
             <a :href="seller.tariffUrl" target="_blank">
               <button class="btn-white">Gjaldskrá 🔗</button>

@@ -13,7 +13,7 @@ export default class LindSeller extends AbstractSeller implements Seller {
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.031, 365_800),
-      new FlatFee('fyrir gagnaöflun', 59_900, 'Gagnaöflun'),
+      new FlatFee('fyrir gagnaöflun', 59_900),
     ];
   }
 }
