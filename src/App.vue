@@ -7,16 +7,21 @@
         :price="translatedPrice"
         :hours="hours"
       />
-      <SellerLineComparisonChart class="chart" :hours="hours"/>
+      <SellerLineComparisonChart class="chart" :hours="hours" />
     </div>
     <div class="details">
       <div class="header">
         <div class="title">
-          <img class="logo" src="@/assets/img/icons/logo.svg">
+          <img class="logo" src="@/assets/img/icons/logo.svg" />
           <div class="pl-2 flex flex-col">
             <span>Fasteignasölur</span>
-            <span class="subtitle">Samanburður á þóknun fasteignasala við sölu samkvæmt verðskrá.</span>
-            <span class="subtitle">Uppfært: {{buildTime}}</span>
+            <header>
+              <span class="subtitle"
+                >Samanburður á þóknun fasteignasala við sölu samkvæmt
+                verðskrá.</span
+              >
+            </header>
+            <span class="subtitle">Uppfært: {{ buildTime }}</span>
           </div>
         </div>
         <div class="links">
@@ -26,21 +31,26 @@
             class="link"
             title="Sjá kóða"
           >
-            <img src="@/assets/icons/GitHub-Mark-32px.png" alt="GitHub Repository">
+            <img
+              src="@/assets/icons/GitHub-Mark-32px.png"
+              alt="GitHub Repository"
+            />
           </a>
           <a
             href="mailto:viktor.saevars@gmail.com"
-            target="blank"
             class="link"
             title="Senda fyrirspurn"
           >
-            <img src="@/assets/icons/iconmonstr-email-10.svg" alt="Senda fyrirspurn">
+            <img
+              src="@/assets/icons/iconmonstr-email-10.svg"
+              alt="Senda fyrirspurn"
+            />
           </a>
         </div>
       </div>
       <Card class="my-2 flex-no-shrink">
         <div slot="header">Söluverð (milljónir)</div>
-        <Slider v-model.number="price" :max="200"/>
+        <Slider v-model.number="price" :max="200" />
       </Card>
       <transition-group name="list" tag="div" class="sellers">
         <SellerComission
