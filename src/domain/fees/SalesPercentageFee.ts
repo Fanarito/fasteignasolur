@@ -8,6 +8,7 @@ export default class SalesPercentageFee implements Fee {
   private price: number;
   private percentage: number;
   private minimum: number;
+  private fee: number;
 
   /**
    * The sale commission fee is a percentage of the price of the property
@@ -28,14 +29,17 @@ export default class SalesPercentageFee implements Fee {
     this.minimum = minimum;
     this.shortExplanation = shortExplanation;
     this.includedInTotal = includedInTotal;
+
+    const fee = this.percentage * this.price;
+    if (fee < this.minimum) {
+      this.fee = this.minimum;
+    } else {
+      this.fee = fee;
+    }
   }
 
   public totalFee(): number {
-    const fee = this.percentage * this.price;
-    if (fee < this.minimum) {
-      return this.minimum;
-    }
-    return fee;
+    return this.fee;
   }
 
   public explanation(): string {
