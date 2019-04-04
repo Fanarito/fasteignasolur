@@ -2,6 +2,7 @@ import Fee from './Fee';
 
 export default class SalesPercentageFee implements Fee {
   public readonly shortExplanation: string;
+  public readonly includedInTotal: boolean;
 
   private reason: string;
   private price: number;
@@ -19,13 +20,14 @@ export default class SalesPercentageFee implements Fee {
     price: number,
     percentage: number,
     minimum: number,
-    shortExplanation: string = 'Söluprósenta',
+    { shortExplanation = 'Söluprósenta', includedInTotal = true } = {},
   ) {
     this.reason = reason;
     this.price = price;
     this.percentage = percentage;
     this.minimum = minimum;
     this.shortExplanation = shortExplanation;
+    this.includedInTotal = includedInTotal;
   }
 
   public totalFee(): number {

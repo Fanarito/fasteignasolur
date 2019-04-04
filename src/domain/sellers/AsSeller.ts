@@ -18,9 +18,8 @@ export default class AsSeller extends AbstractSeller implements Seller {
         price,
         0.02418,
         0,
-        'Söluþóknun',
       ),
-      new FlatFee('fyrir gagnaöflun', 50_000, 'Gagnaöflun'),
+      new FlatFee('fyrir gagnaöflun', 50_000),
     ];
   }
 }
