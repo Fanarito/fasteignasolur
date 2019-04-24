@@ -80,9 +80,9 @@ const FeeBreakdownChart = () =>
   },
 })
 export default class SellerComission extends Vue {
-  @Prop() private seller!: Seller;
-  @Prop() private price!: number;
-  @Prop() private hours!: number;
+  @Prop() public seller!: Seller;
+  @Prop() public price!: number;
+  @Prop() public hours!: number;
 
   get sellerFee(): number {
     return this.seller.totalFee(this.price, this.hours);
@@ -96,15 +96,15 @@ export default class SellerComission extends Vue {
     return ((this.sellerFee / this.price) * 100).toFixed(2);
   }
 
-  private openIconClasses = {
+  public openIconClasses = {
     'open-icon': true,
     'open-icon-closed': true,
     'open-icon-open': false,
   };
 
-  private expanded = false;
+  public expanded = false;
 
-  private expand(): void {
+  public expand(): void {
     this.expanded = !this.expanded;
     this.openIconClasses['open-icon-closed'] = !this.expanded;
     this.openIconClasses['open-icon-open'] = this.expanded;

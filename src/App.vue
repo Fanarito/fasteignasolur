@@ -21,6 +21,7 @@
                 verðskrá.</span
               >
             </header>
+            <span class="subtitle">Verð eru reiknuð með virðisaukaskatti.</span>
             <span class="subtitle">Uppfært: {{ buildTime }}</span>
           </div>
         </div>
@@ -96,9 +97,9 @@ const SellerLineComparisonChart = () =>
   },
 })
 export default class Home extends Vue {
-  private price = 40;
-  private hours = 10;
-  private sellers = sellers;
+  public price = 40;
+  public hours = 10;
+  public sellers = sellers;
 
   get buildTime() {
     return new Date(process.env.BUILD_TIME).toLocaleString('is-IS');

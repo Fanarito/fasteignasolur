@@ -1,8 +1,16 @@
-<template>
+<template functional>
   <div class="loader-wrapper">
     <div class="loader"></div>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue, Watch } from 'vue-property-decorator';
+
+@Component
+export default class Loader extends Vue {}
+</script>
+
 
 <style scoped>
 .loader-wrapper {
