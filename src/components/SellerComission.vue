@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div
     class="rounded overflow-hidden shadow bg-white mb-2 border border-grey-light"
     :style="{ borderLeft: `4px solid ${seller.color}` }"
