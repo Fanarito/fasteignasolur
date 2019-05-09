@@ -11,12 +11,14 @@ import MiklaborgSeller from './MiklaborgSeller';
 import NetstofanSeller from './NetstofanSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
 import RemaxSeller from './RemaxSeller';
+import GimliSeller from './GimliSeller';
 
 export default [
   new AsSeller(),
   new BorgSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
+  new GimliSeller(),
   new HeimiliSeller(),
   new KaupsyslanSeller(),
   new LandmarkSeller(),
