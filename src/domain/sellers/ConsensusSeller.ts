@@ -4,11 +4,11 @@ import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
 import FlatFee from '../fees/FlatFee';
 
-export default class NetstofanSeller extends AbstractSeller implements Seller {
-  public name = 'Netstofan';
-  public logoUrl = 'img/sellers/netstofan.jpg';
+export default class ConsensusSeller extends AbstractSeller implements Seller {
+  public name = 'Consensa';
+  public logoUrl = 'img/sellers/consensa.jpg';
   public color = '#00acee';
-  public tariffUrl = 'https://netstofan.is/?page_id=23';
+  public tariffUrl = 'https://consensa.is/fasteignir/?page_id=23';
 
   public feesTaken(price: number): Fee[] {
     return [
