@@ -13,7 +13,7 @@ export default class KaupsyslanSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('í söluþóknun', price, 0.0217, 496_000),
+      new SalesPercentageFee('í söluþóknun', price, 0.0175, 496_000),
       new FlatFee('fyrir gagnaöflun', 52_900),
     ];
   }

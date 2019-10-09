@@ -1,4 +1,5 @@
 import Fee from './Fee';
+import { VAT } from './constants';
 
 export default class SalesPercentageFee implements Fee {
   public readonly shortExplanation: string;
@@ -30,7 +31,7 @@ export default class SalesPercentageFee implements Fee {
     this.shortExplanation = shortExplanation;
     this.includedInTotal = includedInTotal;
 
-    const fee = this.percentage * this.price;
+    const fee = this.percentage * VAT * this.price;
     if (fee < this.minimum) {
       this.fee = this.minimum;
     } else {
@@ -43,9 +44,12 @@ export default class SalesPercentageFee implements Fee {
   }
 
   public explanation(): string {
-    let explanation = `Taka ${(this.percentage * 100).toFixed(
-      2,
-    )}% af söluverði`;
+    const vatDisplay = (VAT - 1) * 100;
+    const totalPercentage = (this.percentage * VAT * 100).toFixed(2);
+    const percentage = (this.percentage * 100).toFixed(2);
+
+    let explanation = `Taka ${percentage}% af söluverði auk vsk (${(VAT - 1) *
+      100}%) sem jafngildir ${totalPercentage}%`;
     if (this.minimum !== 0) {
       explanation += `, eða að minnsta kosti ${this.minimum.toLocaleString()} kr.`;
     }

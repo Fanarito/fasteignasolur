@@ -7,7 +7,7 @@ import KaupsyslanSeller from './KaupsyslanSeller';
 import LandmarkSeller from './Landmark';
 import LindSeller from './LindSeller';
 import MiklaborgSeller from './MiklaborgSeller';
-import ConsensusSeller from './ConsensusSeller';
+import ConsensaSeller from './ConsensaSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
 import RemaxSeller from './RemaxSeller';
 import GimliSeller from './GimliSeller';
@@ -23,7 +23,7 @@ export default [
   new LandmarkSeller(),
   new LindSeller(),
   new MiklaborgSeller(),
-  new ConsensusSeller(),
+  new ConsensaSeller(),
   new NyttHeimiliSeller(),
   new RemaxSeller(),
 ];

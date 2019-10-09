@@ -12,7 +12,7 @@ export default class MiklaborgSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('í söluþóknun', price, 0.02418, 489_800),
+      new SalesPercentageFee('í söluþóknun', price, 0.0195, 489_800),
       new FlatFee('fyrir gagnaöflun', 54_560),
     ];
   }
