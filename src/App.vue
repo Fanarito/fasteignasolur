@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="home">
+  <div id="app" class="home" :class="rootClass">
     <div class="charts" v-if="!this.$root.$data.isMobile">
       <SellerBarComparisonChart
         class="chart"
@@ -16,10 +16,9 @@
           <div class="pl-2 flex flex-col">
             <span>Fasteignasölur</span>
             <header>
-              <span class="subtitle"
-                >Samanburður á þóknun fasteignasala við sölu samkvæmt
-                verðskrá.</span
-              >
+              <span class="subtitle">
+                Samanburður á þóknun fasteignasala við sölu samkvæmt verðskrá.
+              </span>
             </header>
             <span class="subtitle">Verð eru reiknuð með virðisaukaskatti.</span>
             <span class="subtitle">Uppfært: {{ buildTime }}</span>
@@ -118,10 +117,16 @@ export default class Home extends Vue {
           b.totalFee(this.translatedPrice, this.hours),
       );
   }
+
+  get rootClass(): { [classes: string]: boolean } {
+    return {
+      'bg-white shadow-md': window.self === window.top,
+    };
+  }
 }
 </script>
 
-<style>
+<style lang="postcss">
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 
 body {
@@ -133,6 +138,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  max-width: 1650px;
+  @apply mx-auto;
 }
 
 .header {
