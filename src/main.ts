@@ -5,7 +5,7 @@ import '@/assets/css/tailwind.css';
 Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
+  render: (h: any) => h(App),
   data: {
     isMobile: false,
   },

@@ -45,7 +45,9 @@ module.exports = {
     ],
     resolve: {
       alias: {
-        'chart.js': 'chart.js/dist/Chart.js',
+        'chart.js': 'chart.js/dist/Chart.min.js',
+        // moment is never used so import dummy.js instead
+        moment: path.join(__dirname, 'dummy.js'),
       },
     },
   },
