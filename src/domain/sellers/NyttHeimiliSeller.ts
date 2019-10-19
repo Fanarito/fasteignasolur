@@ -13,7 +13,7 @@ export default class NyttHeimiliSeller extends AbstractSeller
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new SalesPercentageFee('í söluþóknun', price, 0.0195, 334_800),
+      new SalesPercentageFee('í söluþóknun', price, 0.0195, 349_900),
       new FlatFee('fyrir gagnaöflun', 49_600),
     ];
   }
