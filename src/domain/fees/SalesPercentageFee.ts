@@ -51,7 +51,7 @@ export default class SalesPercentageFee implements Fee {
     let explanation = `Taka ${percentage}% af söluverði auk vsk (${(VAT - 1) *
       100}%) sem jafngildir ${totalPercentage}%`;
     if (this.minimum !== 0) {
-      explanation += `, eða að minnsta kosti ${this.minimum.toLocaleString()} kr.`;
+      explanation += `, eða að lágmarki ${this.minimum.toLocaleString()} kr.`;
     }
     explanation += ` ${this.reason}`;
     return explanation;
