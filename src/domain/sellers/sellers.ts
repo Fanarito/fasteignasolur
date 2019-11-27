@@ -1,20 +1,23 @@
+import AlltSeller from './AlltSeller';
 import AsSeller from './AsSeller';
 import BorgSeller from './BorgSeller';
+import ConsensaSeller from './ConsensaSeller';
 import EignarmidlunSeller from './EignarmidlunSeller';
 import EignaverSeller from './EignaverSeller';
+import GimliSeller from './GimliSeller';
 import HeimiliSeller from './HeimiliSeller';
 import KaupsyslanSeller from './KaupsyslanSeller';
 import LandmarkSeller from './Landmark';
 import LindSeller from './LindSeller';
 import MiklaborgSeller from './MiklaborgSeller';
-import ConsensaSeller from './ConsensaSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
 import RemaxSeller from './RemaxSeller';
-import GimliSeller from './GimliSeller';
 
 export default [
+  new AlltSeller(),
   new AsSeller(),
   new BorgSeller(),
+  new ConsensaSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
   new GimliSeller(),
@@ -23,7 +26,6 @@ export default [
   new LandmarkSeller(),
   new LindSeller(),
   new MiklaborgSeller(),
-  new ConsensaSeller(),
   new NyttHeimiliSeller(),
   new RemaxSeller(),
 ];
