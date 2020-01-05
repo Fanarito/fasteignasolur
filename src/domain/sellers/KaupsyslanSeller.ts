@@ -8,7 +8,7 @@ export default class KaupsyslanSeller extends AbstractSeller implements Seller {
   public name = 'Kaupsýslan';
   public logoUrl = 'img/sellers/kaupsyslan.png';
   public color = '#e7302a';
-  public tariffUrl = 'https://www.kaupsyslan.is/gjaldskra';
+  public tariffUrl = 'https://www.kaupsyslan.is/gjaldskra/';
   public showName = true;
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
