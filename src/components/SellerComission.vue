@@ -6,7 +6,7 @@
     <div class="flex p-2 justify-between cursor-pointer" @click="expand">
       <div class="flex w-full lg:w-3/4 xl:text-xl justify-between">
         <div class="seller-name-display">
-          <img class="h-6 xl:h-8" :src="seller.logoUrl" :alt="seller.name" />
+          <img class="h-6 xl:h-8" :src="seller.logoUrl" :alt="seller.name" :title="seller.name" />
           <span v-if="seller.showName" class="seller-name">{{
             seller.name
           }}</span>
