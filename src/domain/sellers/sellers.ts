@@ -11,6 +11,7 @@ import LindSeller from './LindSeller';
 import MiklaborgSeller from './MiklaborgSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
 import RemaxSeller from './RemaxSeller';
+import SaevarthorfasteignirSeller from './SaevarthorfasteignirSeller';
 
 export default [
   new AlltSeller(),
@@ -26,4 +27,5 @@ export default [
   new MiklaborgSeller(),
   new NyttHeimiliSeller(),
   new RemaxSeller(),
+  new SaevarthorfasteignirSeller(),
 ];
