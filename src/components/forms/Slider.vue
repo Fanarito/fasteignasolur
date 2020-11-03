@@ -4,8 +4,9 @@
       type="number"
       class="value-display"
       v-model.number="value"
+      step="0.1"
       @input="$emit('input', $event.target.value)"
-    >
+    />
     <div class="slider-container">
       <input
         type="range"
@@ -13,7 +14,7 @@
         :max="max"
         :value="value"
         @input="$emit('input', $event.target.value)"
-      >
+      />
     </div>
   </div>
 </template>
