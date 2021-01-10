@@ -16,7 +16,7 @@ export default class AlltSeller extends AbstractSeller implements Seller {
         'í söluþóknun miðað við fulla þjónustu',
         price,
         0.0185,
-        0,
+        400_000,
       ),
       new FlatFee('fyrir gagnaöflun', 62_000),
     ];
