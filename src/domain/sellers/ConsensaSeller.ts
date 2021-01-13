@@ -12,7 +12,7 @@ export default class ConsensaSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number): Fee[] {
     return [
-      new SalesPercentageFee('í söluþóknun', price, 0.015, 496_000),
+      new SalesPercentageFee('í söluþóknun', price, 0.012, 496_000),
       new FlatFee(
         'fyrir gagnaöflun (gjald er fellt niður við sölu á eign og því ekki tekið með í heildarreikningi)',
         55_000,
