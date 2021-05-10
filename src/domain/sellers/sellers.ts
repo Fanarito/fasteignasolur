@@ -10,6 +10,7 @@ import LandmarkKaupsyslanSeller from './LandmarkKaupsyslan';
 import LindSeller from './LindSeller';
 import MiklaborgSeller from './MiklaborgSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
+import ProcuraSeller from './ProcuraSeller';
 import RemaxSeller from './RemaxSeller';
 import SaevarthorfasteignirSeller from './SaevarthorfasteignirSeller';
 
@@ -26,6 +27,7 @@ export default [
   new LindSeller(),
   new MiklaborgSeller(),
   new NyttHeimiliSeller(),
+  new ProcuraSeller(),
   new RemaxSeller(),
   new SaevarthorfasteignirSeller(),
 ];
