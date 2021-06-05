@@ -4,6 +4,7 @@ import BorgSeller from './BorgSeller';
 import ConsensaSeller from './ConsensaSeller';
 import EignarmidlunSeller from './EignarmidlunSeller';
 import EignaverSeller from './EignaverSeller';
+import F450Seller from './450Seller';
 import GimliSeller from './GimliSeller';
 import HeimiliSeller from './HeimiliSeller';
 import LandmarkKaupsyslanSeller from './LandmarkKaupsyslan';
@@ -21,6 +22,7 @@ export default [
   new ConsensaSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
+  new F450Seller(),
   new GimliSeller(),
   new HeimiliSeller(),
   new LandmarkKaupsyslanSeller(),
