@@ -16,6 +16,8 @@ export default class HeimiliSeller extends AbstractSeller implements Seller {
       new FlatFee('fyrir að setja eign á söluskrá', 65_000, {
         shortExplanation: 'Skráning á söluskrá',
       }),
+      new FlatFee('fyrir ljósmyndun', 25_000),
+      new FlatFee('fyrir það að fasteignasali sýni eignina', 25_000),
     ];
   }
 }
