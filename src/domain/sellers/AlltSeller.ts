@@ -8,7 +8,7 @@ export default class AlltSeller extends AbstractSeller implements Seller {
   public name = 'Allt fasteignir';
   public logoUrl = 'img/sellers/allt.jpg';
   public color = '#7ad14e';
-  public tariffUrl = 'https://www.alltfasteignir.is/gjaldskra/';
+  public tariffUrl = 'https://www.allt.is/gjaldskra';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

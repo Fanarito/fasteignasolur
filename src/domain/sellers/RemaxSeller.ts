@@ -8,7 +8,7 @@ export default class RemaxSeller extends AbstractSeller implements Seller {
   public name = 'Remax';
   public logoUrl = 'img/sellers/remax.jpg';
   public color = '#0190de';
-  public tariffUrl = 'https://remax.is/gjaldska';
+  public tariffUrl = 'https://remax.is/gjaldskra';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

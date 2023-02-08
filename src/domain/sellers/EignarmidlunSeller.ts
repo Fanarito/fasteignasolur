@@ -9,7 +9,7 @@ export default class EignarmidlunSeller extends AbstractSeller
   public name = 'Eignarmiðlun';
   public logoUrl = 'img/sellers/eignarmidlun.png';
   public color = '#244c82';
-  public tariffUrl = 'https://eignamidlun.is/gjaldskra';
+  public tariffUrl = 'https://eignamidlun.is/fasteignavidskipti';
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [

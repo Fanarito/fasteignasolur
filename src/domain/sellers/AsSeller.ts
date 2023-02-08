@@ -8,7 +8,7 @@ export default class AsSeller extends AbstractSeller implements Seller {
   public name = 'Ás fasteignasala';
   public logoUrl = 'img/sellers/as.png';
   public color = '#431e7b';
-  public tariffUrl = 'https://www.as.is/text1/';
+  public tariffUrl = 'https://www.as.is/verdskra';
   public showName = true;
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
@@ -19,7 +19,8 @@ export default class AsSeller extends AbstractSeller implements Seller {
         0.018,
         0,
       ),
-      new FlatFee('fyrir gagnaöflun', 50_000),
+      new FlatFee('fyrir gagnaöflun', 64_900),
+      new FlatFee('fyrir ljósmyndun', 19_900),
     ];
   }
 }
