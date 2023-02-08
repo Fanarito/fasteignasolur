@@ -1,7 +1,6 @@
 import AlltSeller from './AlltSeller';
 import AsSeller from './AsSeller';
 import BorgSeller from './BorgSeller';
-import ConsensaSeller from './ConsensaSeller';
 import EignarmidlunSeller from './EignarmidlunSeller';
 import EignaverSeller from './EignaverSeller';
 import F450Seller from './450Seller';
@@ -19,7 +18,6 @@ export default [
   new AlltSeller(),
   new AsSeller(),
   new BorgSeller(),
-  new ConsensaSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
   new F450Seller(),
