@@ -6,7 +6,7 @@ import EignaverSeller from './EignaverSeller';
 import F450Seller from './450Seller';
 import GimliSeller from './GimliSeller';
 import HeimiliSeller from './HeimiliSeller';
-import LandmarkSeller from './LandmarkKaupsyslan';
+import LandmarkSeller from './Landmark';
 import LindSeller from './LindSeller';
 import MiklaborgSeller from './MiklaborgSeller';
 import NyttHeimiliSeller from './NyttHeimiliSeller';
