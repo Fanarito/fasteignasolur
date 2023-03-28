@@ -6,6 +6,7 @@ import EignaverSeller from './EignaverSeller';
 import F450Seller from './450Seller';
 import GimliSeller from './GimliSeller';
 import HeimiliSeller from './HeimiliSeller';
+import KaupstadurSeller from './Kaupstadur';
 import LandmarkSeller from './Landmark';
 import LindSeller from './LindSeller';
 import MiklaborgSeller from './MiklaborgSeller';
@@ -23,6 +24,7 @@ export default [
   new F450Seller(),
   new GimliSeller(),
   new HeimiliSeller(),
+  new KaupstadurSeller(),
   new LandmarkSeller(),
   new LindSeller(),
   new MiklaborgSeller(),
