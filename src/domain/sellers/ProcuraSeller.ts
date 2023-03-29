@@ -11,7 +11,7 @@ export default class ProcuraSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new FlatFee('í söluþóknun', 595_000, {
+      new FlatFee('í söluþóknun miðað við að fasteignasali sýni eignina', 649_000, {
         shortExplanation: 'Söluþóknun',
       }),
     ];
