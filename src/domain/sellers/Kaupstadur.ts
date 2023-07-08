@@ -12,7 +12,7 @@ export default class KaupstadurSeller extends AbstractSeller implements Seller {
 
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
-      new FlatFee('miðað við Platínupakkann', 419_000),
+      new FlatFee('miðað við Platínupakkann', 489_000),
     ];
   }
 }
