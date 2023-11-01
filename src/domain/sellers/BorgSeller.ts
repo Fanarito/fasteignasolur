@@ -14,6 +14,7 @@ export default class BorgSeller extends AbstractSeller implements Seller {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.0195, 558_000),
       new FlatFee('fyrir gagnaöflun', 79_000),
+      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', 65_000)
     ];
   }
 }
