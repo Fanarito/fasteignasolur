@@ -19,6 +19,10 @@ export default class AlltSeller extends AbstractSeller implements Seller {
         400_000,
       ),
       new FlatFee('fyrir gagnaöflun', 62_000),
+      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', 65_000),
+      new FlatFee('fyrir ljósmyndun (fellur niður ef eigin selst)', 30_000, {
+        includedInTotal: false,
+      }),
     ];
   }
 }
