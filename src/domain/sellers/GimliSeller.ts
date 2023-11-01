@@ -14,6 +14,7 @@ export default class GimliSeller extends AbstractSeller implements Seller {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.019, 483_600),
       new FlatFee('fyrir gagnaöflun', 48_360),
+      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', 65_000),
     ];
   }
 }
