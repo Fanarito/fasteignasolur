@@ -21,7 +21,6 @@ export default [
   new BorgSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
-  new F450Seller(),
   new GimliSeller(),
   new HeimiliSeller(),
   new KaupstadurSeller(),
