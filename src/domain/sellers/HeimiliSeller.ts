@@ -3,6 +3,7 @@ import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
 import FlatFee from '../fees/FlatFee';
 import AbstractSeller from './AbstractSeller';
+import { EstimatedAdvertisementFee } from '../fees/constants';
 
 export default class HeimiliSeller extends AbstractSeller implements Seller {
   public name = 'Heimili';
@@ -18,7 +19,7 @@ export default class HeimiliSeller extends AbstractSeller implements Seller {
       }),
       new FlatFee('fyrir ljósmyndun', 28_500),
       new FlatFee('fyrir það að fasteignasali sýni eignina', 25_000),
-      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', 65_000),
+      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', EstimatedAdvertisementFee),
     ];
   }
 }

@@ -3,6 +3,7 @@ import Seller from './Seller';
 import Fee from '../fees/Fee';
 import SalesPercentageFee from '../fees/SalesPercentageFee';
 import FlatFee from '../fees/FlatFee';
+import { EstimatedAdvertisementFee } from '../fees/constants';
 
 export default class AlltSeller extends AbstractSeller implements Seller {
   public name = 'Allt fasteignir';
@@ -19,7 +20,7 @@ export default class AlltSeller extends AbstractSeller implements Seller {
         400_000,
       ),
       new FlatFee('fyrir gagnaöflun', 62_000),
-      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', 65_000),
+      new FlatFee('áætlað verð fyrir gerð og birtingu auglýsinga (eftir samkomulagi)', EstimatedAdvertisementFee),
       new FlatFee('fyrir ljósmyndun (fellur niður ef eigin selst)', 30_000, {
         includedInTotal: false,
       }),
