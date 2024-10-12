@@ -13,8 +13,7 @@ export default class LandmarkSeller extends AbstractSeller implements Seller {
   public feesTaken(price: number, hoursWorked: number): Fee[] {
     return [
       new SalesPercentageFee('í söluþóknun', price, 0.0175, 500_000),
-      new FlatFee('fyrir gagnaöflun', 69_900),
-      new FlatFee('auglýsingagjald', 25_000),
+      new FlatFee('fyrir gagnaöflun', 79_000),
       new FlatFee('myndataka fagljósmyndara', 25_000),
     ];
   }
