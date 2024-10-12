@@ -3,7 +3,6 @@ import AsSeller from './AsSeller';
 import BorgSeller from './BorgSeller';
 import EignarmidlunSeller from './EignarmidlunSeller';
 import EignaverSeller from './EignaverSeller';
-import F450Seller from './450Seller';
 import GimliSeller from './GimliSeller';
 import HeimiliSeller from './HeimiliSeller';
 import KaupstadurSeller from './Kaupstadur';
