@@ -16,11 +16,12 @@ export default class AsSeller extends AbstractSeller implements Seller {
       new SalesPercentageFee(
         'í söluþóknun miðað við að fasteignasali sýni alltaf',
         price,
-        0.018,
-        0,
+        0.017,
+        496_000,
       ),
       new FlatFee('fyrir gagnaöflun', 64_900),
-      new FlatFee('fyrir ljósmyndun', 19_900),
+      new FlatFee('fyrir ljósmyndun', 22_900),
+      new FlatFee('fyrir gerð og birtingu auglýsinga á netinu', 29_900),
     ];
   }
 }
