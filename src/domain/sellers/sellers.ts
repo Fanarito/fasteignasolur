@@ -13,6 +13,7 @@ import NyttHeimiliSeller from './NyttHeimiliSeller';
 import ProcuraSeller from './ProcuraSeller';
 import RemaxSeller from './RemaxSeller';
 import SaevarthorfasteignirSeller from './SaevarthorfasteignirSeller';
+import ViltuSeller from './Viltu';
 
 export default [
   new AlltSeller(),
@@ -30,4 +31,5 @@ export default [
   new ProcuraSeller(),
   new RemaxSeller(),
   new SaevarthorfasteignirSeller(),
+  new ViltuSeller(),
 ];
