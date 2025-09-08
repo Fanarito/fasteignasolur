@@ -96,7 +96,7 @@ const SellerLineComparisonChart = () =>
   },
 })
 export default class Home extends Vue {
-  public price = 60;
+  public price = 80;
   public hours = 10;
   public sellers = sellers;
 
