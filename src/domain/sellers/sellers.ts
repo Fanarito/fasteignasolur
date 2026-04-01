@@ -3,6 +3,7 @@ import AsSeller from './AsSeller';
 import BorgSeller from './BorgSeller';
 import EignarmidlunSeller from './EignarmidlunSeller';
 import EignaverSeller from './EignaverSeller';
+import FasteignavalSeller from './FasteignavalSeller';
 import GimliSeller from './GimliSeller';
 import HeimiliSeller from './HeimiliSeller';
 import KaupstadurSeller from './Kaupstadur';
@@ -20,6 +21,7 @@ export default [
   new BorgSeller(),
   new EignarmidlunSeller(),
   new EignaverSeller(),
+  new FasteignavalSeller(),
   new GimliSeller(),
   new HeimiliSeller(),
   new KaupstadurSeller(),
